@@ -1704,10 +1704,10 @@ void determineBestSplit(
 
     // If there are multiple best features, sample one according to their
     // frequency of occurence
-    std::uniform_int_distribution<size_t> unif_dist(
-        0, bestFeatures.size() - 1
-    );
-    size_t tmp_random = unif_dist(random_number_generator);
+    // std::uniform_int_distribution<size_t> unif_dist(
+    //     0, bestFeatures.size() - 1
+    // );
+    size_t tmp_random = unif_int_dist(0, bestFeatures.size() - 1, random_number_generator());
     size_t bestFeatureIndex = bestFeatures.at(tmp_random);
     // Return the best splitFeature and splitValue
     bestSplitFeature = bestSplitFeatureAll[bestFeatureIndex];

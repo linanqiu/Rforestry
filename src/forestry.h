@@ -10,8 +10,6 @@
 #include <vector>
 #include <string>
 
-
-
 class forestry {
 
 public:

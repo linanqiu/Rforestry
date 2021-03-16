@@ -9,7 +9,6 @@
 #include <RcppArmadillo.h>
 #define DOPARELLEL true
 
-
 forestry::forestry():
   _trainingData(nullptr), _ntree(0), _replace(0), _sampSize(0),
   _splitRatio(0), _mtry(0), _minNodeSizeSpt(0), _minNodeSizeAvg(0),
@@ -253,7 +252,8 @@ void forestry::addTrees(size_t ntree) {
             );
             // Generate index without replacement
             while (sampleIndex.size() < getSampleSize()) {
-              size_t randomIndex = unif_dist(random_number_generator);
+              // size_t randomIndex = unif_dist(random_number_generator);
+              size_t randomIndex = unif_int_dist(0, (size_t) (*getTrainingData()).getNumRows() - 1, random_number_generator());
 
               if (
                 sampleIndex.size() == 0 ||

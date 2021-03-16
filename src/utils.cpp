@@ -3,6 +3,20 @@
 #include <string>
 #include <iostream>
 
+int unif_int_dist(int rangeLow, int rangeHigh, int rand) {
+    double myRand = rand / (1.0 + RAND_MAX); 
+    int range = rangeHigh - rangeLow + 1;
+    int myRand_scaled = (myRand * range) + rangeLow;
+    return myRand_scaled;
+}
+
+size_t unif_int_dist(size_t rangeLow, size_t rangeHigh, int rand) {
+    double myRand = rand / (1.0 + RAND_MAX); 
+    int range = rangeHigh - rangeLow + 1;
+    size_t myRand_scaled = (myRand * range) + rangeLow;
+    return myRand_scaled;
+}
+
 void print_vector(
   std::vector<size_t> v
 ){

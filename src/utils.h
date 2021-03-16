@@ -6,6 +6,8 @@
 #include <string>
 #include <iostream>
 
+int unif_int_dist(int rangeLow, int rangeHigh, int rand);
+
 void print_vector(
   std::vector<size_t> v
 );
